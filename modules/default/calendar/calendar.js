@@ -522,7 +522,9 @@ Module.register("calendar", {
 						}
 					}
 				} else {
-					events.push(event);
+					if (event.endDate > now && event.endDate <= future) {
+						events.push(event);
+					}
 				}
 			}
 		}
